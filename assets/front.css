@@ -1,0 +1,130 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+#Front-Page{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+#Front-Page .img, .content{
+	width: 50%;
+}
+
+#Front-Page .content h1{
+	font-family: 'Sofia', cursive;
+	font-size: 50px;
+}
+
+#Front-Page .content p{
+	font-family: 'Montserrat Alternates', sans-serif;
+	font-size: 20px;
+	margin: 10px 0 30px;
+}
+
+#Front-Page .content a{
+	text-decoration: none;
+	padding: 20px 50px;
+	/*background-image: linear-gradient(to right, #f5b544, #e59d28);*/
+	background-color: #e59d28;
+	color: #000000;
+	font-family: 'Montserrat Alternates', sans-serif;
+	border-radius: 10px;
+	font-weight: 500;
+	/*margin: 20px;*/
+	transition: 0.5s;
+}
+
+#Front-Page .content a:hover{
+	/*background-image: linear-gradient(to right, #ffffff, #ffffff);*/
+	background-color: #f2f5fb94;
+	color: #000000;
+}
+
+#Front-Page .content{
+	background-color: #3c82f5;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-left: 20px;
+	text-align: center;
+	/*color: #ffffff;*/
+}
+
+#Front-Page .img{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#Front-Page .img img{
+	margin: auto;
+	width: 700px;
+}
+
+@media only screen and (max-width: 480px){
+	#Front-Page .img img{
+		width: 350px;
+	}
+
+	#Front-Page{
+		display: flex;
+		flex-direction: column;
+	}
+
+	#Front-Page .img, .content{
+		width: auto;
+	}
+
+	#Front-Page .content h1{
+		font-size: 35px;
+	}
+
+	#Front-Page .content{
+		padding-left: 0;
+		padding: 20px 10px;
+	}
+
+	#Front-Page .content p{
+		font-size: 16px;
+	}
+
+	#Front-Page .content a{
+	padding: 10px 30px;
+	}
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px){
+	#Front-Page .img img{
+		width: 400px;
+	}
+
+	#Front-Page .content h1{
+		font-size: 40px;
+	}
+
+	#Front-Page .content p{
+		font-size: 16px;
+	}
+
+	#Front-Page .content{
+		padding-left: 0;
+		padding: 20px 10px;
+	}
+
+	#Front-Page .content a{
+	padding: 15px 30px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px){
+	#Front-Page .img img{
+		width: 550px;
+	}
+}

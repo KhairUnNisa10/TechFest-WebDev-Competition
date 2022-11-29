@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>To-Do List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="lib/Bootstrap/bootstrap.min.css" /> -->
+    <link rel="stylesheet" href="lib/jQuery/jquery.ui.min.css" />
+    <link rel="stylesheet" href="assets/todo.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Sofia&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e4e7973e36.js" crossorigin="anonymous"></script>
+    <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+</head>
+
+<body class="well">
+    <div id="container">
+        <div class="boxes">
+            <div class="task-box" id="pending">
+                <h2>To-Do</h2>
+            </div>
+
+            <div class="task-box" id="inProgress">
+                <h2>In Progress</h2>
+            </div>
+
+            <div class="task-box linethrough" id="completed">
+                <h2 id="notthrough">Complete</h2>
+            </div>
+
+        </div>
+        <div class="task-list">
+            <h2 class="task-head">Add Task</h2>
+            <form id="todo-form">
+                <div class="inputs">
+                    <input type="text" placeholder="Title" class="in" />
+                    <textarea class="in" placeholder="Description"></textarea>
+                    <input class="in" type="text" id="datepicker" placeholder="Due Date (dd/mm/yyyy)" />
+
+                </div>
+
+                <input type="button" id="addTask" class="btn btn-primary" value="Add Task" onclick="todo.add();" />
+            </form>
+             <input id="attachment" type="hidden" role="uploadcare-uploader" name="my_file_input" /><br>
+
+
+            <input type="button" class="btn btn-primary" value="Clear Data" onclick="todo.clear();" />
+
+
+            <div id="delete-div">
+                Drag Here to <i class="fa-solid fa-trash"></i>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+        <script type="text/javascript" src="lib/jQuery/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/Bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="lib/jQuery/jquery.ui.min.js"></script>
+        <script type="text/javascript" src="assets/todo.js"></script>
+
+        <script type="text/javascript">
+            $( "#datepicker" ).datepicker();
+            $( "#datepicker" ).datepicker("option", "dateFormat", "dd/mm/yy");
+
+            $(".task-container").droppable();
+            $(".todo-task").draggable({ revert: "valid", revertDuration:200 });
+            todo.init();
+
+
+            UPLOADCARE_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+        </script>
+    </div>
+</body>
+</html>
